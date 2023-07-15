@@ -464,7 +464,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sprites
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -472,15 +472,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets
+  - Assets/Sprites
   m_LastFoldersGridSize: 53
-  m_LastProjectPath: C:\Users\Vlad Ilyashenko\Desktop\final-shift-game
+  m_LastProjectPath: C:\Users\Vlad Ilyashenko\Desktop\My docs\My Repositories\final-shift-game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: cc610000
-    m_LastClickedID: 25036
+    m_SelectedIDs: d4610000
+    m_LastClickedID: 25044
     m_ExpandedIDs: 00000000c4610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -534,9 +534,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c6600000
-    m_LastClickedInstanceID: 24774
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 24610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -647,7 +647,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -655,15 +655,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Vlad Ilyashenko\Desktop\My docs\My Repositories\final-shift-game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c4610000
-    m_LastClickedID: 25028
+    m_SelectedIDs: d2610000
+    m_LastClickedID: 25042
     m_ExpandedIDs: 00000000c4610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -719,8 +719,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300005a600000846000004a60000016600000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300005a600000846000004a600000166000007e610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -832,9 +832,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c8600000
-      m_LastClickedID: 24776
-      m_ExpandedIDs: 12fbffff
+      m_SelectedIDs: c2deffff
+      m_LastClickedID: -8510
+      m_ExpandedIDs: 12fbffff9a600000c8600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1227,9 +1227,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.8054152, y: -0.8753751, z: 0.022000331}
+    m_Target: {x: 0.10904652, y: -0.4305599, z: 0.076461345}
     speed: 2
-    m_Value: {x: 0.8054152, y: -0.8753751, z: 0.022000331}
+    m_Value: {x: 0.10904652, y: -0.4305599, z: 0.076461345}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1279,9 +1279,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.799986
+    m_Target: 4.474572
     speed: 2
-    m_Value: 7.799986
+    m_Value: 4.474572
   m_Ortho:
     m_Target: 1
     speed: 2
