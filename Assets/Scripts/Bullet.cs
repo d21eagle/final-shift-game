@@ -8,17 +8,31 @@ public class Bullet : MonoBehaviour
     public int damage;
     public LayerMask whatIsSolid;
 
+    private void Start()
+    {
+        // Уничтожение снаряда через время
+        Invoke(nameof(DestroyBullet), lifetime);
+    }
+
     private void Update()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
+        // нанесение урона врагу снарядом
+        var hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
         if (hitInfo.collider != null)
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }
-            Destroy(gameObject);
+            DestroyBullet();
         }
+        
+        // полёт снаряда
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+    
+    private void DestroyBullet()
+    {
+        Destroy(gameObject);
     }
 }

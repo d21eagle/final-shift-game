@@ -97,10 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6158215ee4ebac0428fe1927b40ce66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  lifetime: 0.5
+  speed: 20
+  lifetime: 2
   distance: 0.5
   damage: 1
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 256
+  destroyEffect: {fileID: 0}

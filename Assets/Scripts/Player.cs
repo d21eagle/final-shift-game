@@ -2,32 +2,31 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float horizontal;
-    private float vertical;
-    float moveLimiter = 0.7f;
+    public int health;
     public float runSpeed = 8.0f;
-    
-    private Rigidbody2D body;
-    private SpriteRenderer spriteRenderer;
-    private Animator animator;
-    
     public Joystick joystick;
     public ControlType controlType;
     public enum ControlType{PC, Android}
+    
+    private float moveLimiter = 0.7f;
+    private float horizontal;
+    private float vertical;
+    private Rigidbody2D body;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private static readonly int State = Animator.StringToHash("State");
 
-    void Start ()
+    private void Start ()
     {
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
         if (controlType == ControlType.PC)
-        {
             joystick.gameObject.SetActive(false);
-        }
     }
 
-    void Update()
+    private void Update()
     {
         if (controlType == ControlType.PC)
         {
@@ -41,8 +40,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        // замедление игрока при движении по диагонали
         if (horizontal != 0 && vertical != 0)
         {
             horizontal *= moveLimiter;
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         
+        // поворот игрока и переключение анимаций
         if (horizontal != 0 || vertical != 0)
         {
             if (horizontal > 0)
@@ -58,10 +59,16 @@ public class Player : MonoBehaviour
             else if (horizontal < 0)
                 spriteRenderer.flipX = true;
             
-            animator.SetInteger("State", 1);
-        } else
+            animator.SetInteger(State, 1);
+        } 
+        else
         {
-            animator.SetInteger("State", 0);
+            animator.SetInteger(State, 0);
         }
+    }
+
+    public void ChangeHealth(int healthValue)
+    {
+        health += healthValue;
     }
 }
