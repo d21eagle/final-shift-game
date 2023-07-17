@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int health;
-    public float runSpeed = 8.0f;
+    public float runSpeed;
     public Joystick joystick;
     public ControlType controlType;
     public enum ControlType{PC, Android}
@@ -16,14 +16,16 @@ public class Player : MonoBehaviour
     private Animator animator;
     private static readonly int State = Animator.StringToHash("State");
 
-    private void Start ()
+    private void Start()
     {
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
         if (controlType == ControlType.PC)
+        {
             joystick.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -42,15 +44,22 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        PlayerMovement();
+    }
+
+    private void PlayerMovement()
+    {
         // замедление игрока при движении по диагонали
         if (horizontal != 0 && vertical != 0)
         {
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
+        
+        // движение игрока
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         
-        // поворот игрока и переключение анимаций
+        // поворот игрока по оси Х и переключение анимаций
         if (horizontal != 0 || vertical != 0)
         {
             if (horizontal > 0)
@@ -62,9 +71,7 @@ public class Player : MonoBehaviour
             animator.SetInteger(State, 1);
         } 
         else
-        {
             animator.SetInteger(State, 0);
-        }
     }
 
     public void ChangeHealth(int healthValue)
