@@ -7,20 +7,25 @@ public class Enemy : MonoBehaviour
     public float speed;
     
     private Player player;
+    private Rigidbody2D body;
 
     private void Start()
     {
         player = FindObjectOfType<Player>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         if (health <= 0)
             Destroy(gameObject);
+    }
 
+    private void FixedUpdate()
+    {
         EnemyMovement();
     }
-    
+
     private void EnemyMovement()
     {
         // поворот врага по оси Х
@@ -30,8 +35,7 @@ public class Enemy : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         
         // движение врага за игроком
-        transform.position = Vector2.MoveTowards(
-            transform.position, player.transform.position, speed * Time.deltaTime);
+        body.velocity = (player.transform.position - transform.position).normalized * speed;
     }
 
     public void TakeDamage(int damage)
